@@ -14,7 +14,7 @@ The following example shows all possible configurations.
 
 ```php
 $config['pico_minify'] = array(
-    'minify' = true,
+    'minify' => true,
     'compress_css' => true,
     'compress_js' => true,
     'remove_comments' => true
