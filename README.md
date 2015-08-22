@@ -51,7 +51,7 @@ $config['pico_minify']['compress_js'] = true;
 To remove your HTML comments like `<!-- my example comment -->`, use the `remove_comments` key.  `(default: true)`
 
 ```php
-$config['pico_minify']['compress_js'] = true;
+$config['pico_minify']['remove_comments'] = true;
 ```
 
 ## Copyright
