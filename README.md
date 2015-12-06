@@ -6,7 +6,7 @@ If you need to support Pico 0.x, please check out the other branch "0.x" to get 
 
 ## Usage
 
-Copy the `pico_minify.php` file to the Pico plugins folder `plugins`. All additional configurations are optional.
+Copy the `PicoMinify.php` file to the Pico plugins folder `plugins`. All additional configurations are optional.
 
 ## Configuration
 
