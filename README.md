@@ -2,7 +2,6 @@ Pico Minify
 ===========
 
 Pico Minify is a simple [PicoCMS](http://picocms.org/) (0.x) plugin to minify your HTML output.
-If you need something to support the current Pico version (1.x), check out the other repository!
 
 ## Usage
 
