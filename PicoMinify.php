@@ -5,17 +5,26 @@
  * This class is a modified version of the Wordpress-Minify class by http://fastwp.de/snippets/html-minify/
  *
  * @author Niklas Teich <niklas@millenworld.de>
- *
  * @link https://github.com/NiklasTeich/Pico-Minify Github Repository
  * @link http://fastwp.de/snippets/html-minify/ Original class reference
+ * @version 1.1
  */
 
 /**
  * Class Pico_Minify
  */
 
-class Pico_Minify
+class PicoMinify extends AbstractPicoPlugin
 {
+
+    /**
+     * This plugin is enabled by default
+     *
+     * @see AbstractPicoPlugin::$enabled
+     * @var boolean
+     */
+
+    protected $enabled = true;
 
     /**
      * Main-flag to activate/deactivate the Pico Minify plugin.
@@ -52,10 +61,11 @@ class Pico_Minify
     /**
      * Hook helper-function to manipulate the Pico output.
      *
-     * @param $output
+     * @param  string &$output
+     * @return void
      */
 
-    public function after_render(&$output)
+    public function onPageRendered(&$output)
     {
 
         if ($this->minify) {
@@ -67,15 +77,17 @@ class Pico_Minify
     }
 
     /**
-     * Hook helper-function to load the (optional) custom config settings.
+     * Hook to load the (optional) custom config settings.
      *
-     * @param $settings
+     * @see    Pico::getConfig()
+     * @param  mixed[] &$settings
+     * @return void
      */
 
-    public function config_loaded(&$settings)
+    public function onConfigLoaded(array &$settings)
     {
 
-        $this->minify = isset($settings['pico_minify']['minify']) ? $settings['pico_minify']['minify'] : true;
+        $this->minify = isset($settings['pico_minify']['minify']) ? $settings['pico_minify']['minify'] : $this->isEnabled();
 
         $this->compress_css = isset($settings['pico_minify']['compress_css']) ? $settings['pico_minify']['compress_css'] : true;
 
