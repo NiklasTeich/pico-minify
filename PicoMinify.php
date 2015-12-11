@@ -11,7 +11,7 @@
  */
 
 /**
- * Class Pico_Minify
+ * Class PicoMinify
  */
 
 class PicoMinify extends AbstractPicoPlugin
